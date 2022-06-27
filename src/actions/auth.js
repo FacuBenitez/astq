@@ -25,12 +25,14 @@ export const startLoginEmailPassword = (email, password) => {
 
 export const startGoogleLogin = () => {
 
-    return(dispatch)=>{
-        firebase.auth().signInWithPopup(googleAuthProvider)
+    return async(dispatch)=>{
+       await firebase.auth().signInWithPopup(googleAuthProvider)
             .then(({user})=>{
                 dispatch(
                     login(user.uid, user.displayName)
                 )
+            }).catch(err=>{
+                Swal.fire( 'Error', err.message, 'error')
             })
     }
 }
