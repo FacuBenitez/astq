@@ -11,10 +11,10 @@ import { motion } from 'framer-motion';
 export const RegisterScreen = () => {
 
   const [formValues, handleInputChange] = useForm({
-    name:'Facu',
-    email: 'facu@gmail.com',
-    password: 'asdasd',
-    password2: 'asdasd'
+    name:'',
+    email: '',
+    password: '',
+    password2: ''
   });
 
 
